@@ -22,6 +22,10 @@ Route::match(['post', 'get'], 'register', function (){
     return redirect('/');
 })->name('register');
 
+Route::post(Telegram::getAccessToken(), function (){
+    app('App\Http\Controllers\Backend\TelegramController')->webHook();
+});
+
 Route::middleware(['auth'])->prefix('admin')->namespace('Backend')->name('admin.')->group(function (){
     Route::get('/', 'DashboardController@index')->name('index');
 

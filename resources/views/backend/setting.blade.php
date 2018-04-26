@@ -20,8 +20,8 @@
                             <li><a href="#" class="nav-link"
                                    onclick="document.getElementById('url_callback_bot').value = '{{ url('') }}'">Вставить
                                     url</a></li>
-                            <li><a href="#" class="nav-link">Отправить url</a></li>
-                            <li><a href="#" class="nav-link">Получить информацию</a></li>
+                            <li><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('setwebhook').submit();">Отправить url</a></li>
+                            <li><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('getwebhookinfo').submit();">Получить информацию</a></li>
                         </ul>
                     </div>
                     <input type="url" class="form-control" id="url_callback_bot" name="url_callback_bot"
